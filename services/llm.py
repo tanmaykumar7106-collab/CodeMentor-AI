@@ -4,7 +4,7 @@ from ollama import Client
 
 def generate_response(prompt):
     try:
-        api_key = st.secrets["53ccde5d1a7c4a1db001f9ceac869af3.QSFlHRz46vvJld4WKibftwEO"]
+        api_key = st.secrets"53ccde5d1a7c4a1db001f9ceac869af3.QSFlHRz46vvJld4WKibftwEO"
         model = st.secrets.get("OLLAMA_MODEL", "qwen3.5:397b")
 
         client = Client(
