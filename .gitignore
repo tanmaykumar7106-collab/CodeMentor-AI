@@ -7,9 +7,6 @@ __pycache__/
 venv/
 .env
 
-# Streamlit
-.streamlit/
-
 # IDE
 .vscode/
 .idea/
