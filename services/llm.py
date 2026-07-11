@@ -4,15 +4,18 @@ from ollama import Client
 
 def generate_response(prompt):
     try:
+        api_key = st.secrets["OLLAMA_API_KEY"]
+        model = st.secrets.get("OLLAMA_MODEL", "qwen3.5:397b")
+
         client = Client(
             host="https://ollama.com",
             headers={
-                "Authorization": f"Bearer {st.secrets['53ccde5d1a7c4a1db001f9ceac869af3.QSFlHRz46vvJld4WKibftwEO']}"
+                "Authorization": f"Bearer {api_key}"
             }
         )
 
         response = client.generate(
-            model=st.secrets.get("OLLAMA_MODEL", "qwen3.5:397b"),
+            model=model,
             prompt=prompt,
             stream=False
         )
